@@ -11,13 +11,16 @@ public class Transitions : MonoBehaviour
 
 	private void Update()
 	{
+
 		if (Input.GetAxisRaw("Vertical") > 0f) //Walk
 		{
 			transform.position += new Vector3(Time.deltaTime * 0.3f, 0f);
+			puppy1Animator.SetFloat("New Float", Input.GetAxisRaw("Vertical"));
+
 		}
 		else //Idle
 		{
-
+			puppy1Animator.SetFloat("New Float", 0);
 		}
 	}
 }
